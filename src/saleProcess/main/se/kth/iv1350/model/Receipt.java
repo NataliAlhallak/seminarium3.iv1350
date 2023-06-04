@@ -2,15 +2,19 @@ package saleProcess.main.se.kth.iv1350.model;
 
 import java.time.LocalDateTime;
 
+/**
+ * The Receipt class represents a receipt for a sale.
+ */
 public class Receipt {
     private SaleDTO currentSale;
     private StringBuilder salesItem;
     private Sale sale;
 
     /**
-     * Creates a new instance.
-     * 
-     * @param sales and {@link SaleDTO} the contains the sal information.
+     * Creates a new instance of Receipt.
+     *
+     * @param sales     The SaleDTO object that contains the sale information.
+     * @param itemsList The StringBuilder object representing the list of items on the receipt.
      */
     public Receipt(SaleDTO sales, StringBuilder itemsList) {
         this.currentSale = sales;
@@ -18,6 +22,12 @@ public class Receipt {
 
     }
 
+
+    /**
+     * Gets the list of items on the receipt.
+     *
+     * @return The StringBuilder object representing the list of items.
+     */
     private StringBuilder getItemsList() {
         salesItem = sale.itemsList();
         return salesItem;
@@ -27,10 +37,10 @@ public class Receipt {
         return currentSale;
     }
 
-    /*
-     * The <code>creatReceiptString/<code> is to creat a string representation of
-     * the receipt.
-     * and @return a well-formatted receipt string.
+    /**
+     * Creates a string representation of the receipt.
+     *
+     * @return A well-formatted receipt string.
      */
 
     public String creatReceiptString() {

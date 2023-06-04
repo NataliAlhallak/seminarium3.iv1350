@@ -1,28 +1,30 @@
 package saleProcess.main.se.kth.iv1350.integration;
 import saleProcess.main.se.kth.iv1350.model.*;
+
+/**
+ * The Register class is responsible for recording the amount of payment and keeping track of the store's amount of money.
+ */
 public class Register {
     private double storeAmount;
-
-
-    /*
-     *<code>Register</code> is a constructor of register
+    /**
+     * Creates an instance of Register.
      */
-
     public Register() {
     }
 
     /**
      * Records the amount of payment.
-     * @param payment and the object {@link Payment} is the amount payment.
+     *
+     * @param amountPaid The Payment object that represents the amount paid.
      */
-
     public void PaymentAmount (Payment amountPaid){
         this.storeAmount += amountPaid.getAmountPayment();
     }
 
     /**
-     * A method to get the stores amount.
-     * @return stores amount of money.
+     * Returns the store's amount of money.
+     *
+     * @return The store's amount of money.
      */
     public double getStoreAmount (){
         return storeAmount;
